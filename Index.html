@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bipochain - Premium Female & Partner Network</title>
+    <style>
+        :root {
+            --bg-color: #0d0b11; /* Fondo oscuro profundo muy elegante */
+            --primary: #9d4edd;  /* Violeta tecnológico */
+            --accent: #e5b842;   /* Oro premium para destacar elementos clave */
+            --dark-text: #f3f0f5; /* Texto claro de alta legibilidad */
+            --card-bg: #16141c;   /* Tarjetas oscuras integradas */
+            --soft-purple: #241931;
+            --green-effective: #00b4d8; /* Azul eléctrico de alta efectividad */
+            --partner-blue: #3a86ff;   /* Sincronización de red */
+            --success-gold: #e5b842;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 550px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #9d9aa4;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Navegación Enérgica, Horizontal y Adaptable */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 550px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+            gap: 4px;
+            border: 1px solid #252131;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            padding: 12px 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #9d9aa4;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        nav button.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            max-width: 550px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            animation: slideUp 0.4s ease;
+            border: 1px solid #252131;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-bottom: 1px solid #252131;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .card {
+            background-color: #1c1924;
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #2d283a;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #c5c2cc;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 2px solid #2d283a;
+            border-radius: 12px;
+            background-color: #121017;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button.btn-main {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #7b2cbf);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(157, 78, 221, 0.3);
+            transition: 0.3s;
+        }
+
+        button.btn-main:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #241931, #16141c);
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent);
+            font-style: italic;
+            border: 1px solid #3d2e52;
+        }
+
+        .info-tip {
+            background-color: #121017;
+            border-left: 4px solid var(--accent);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #d1ced6;
+        }
+
+        .hidden-panel {
+            display: none;
+            background: #121017;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 1px dashed var(--primary);
+        }
+
+        /* Chat / Asistente UI */
+        .chat-box {
+            height: 220px;
+            border: 1px solid #2d283a;
+            border-radius: 12px;
+            padding: 10px;
+            overflow-y: auto;
+            background: #121017;
+            margin-bottom: 10px;
+        }
+        .msg { margin-bottom: 8px; padding: 8px 12px; border-radius: 10px; font-size: 0.85rem; max-width: 85%; line-height: 1.4; }
+        .msg.user { background: var(--soft-purple); border: 1px solid #4a2874; margin-left: auto; text-align: right; color: #fff; }
+        .msg.ai { background: #1c1924; border: 1px solid #2d283a; color: #e1dde6; }
+
+        /* Switch toggles modernos */
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            background: #121017;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #2d283a;
+        }
+
+        /* --- NUEVOS ESTILOS EXCLUSIVOS PARA EL CALENDARIO INTERNO Y MEDS --- */
+        .med-checkbox-container {
+            display: flex;
+            align-items: center;
+            background: #121017;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #2d283a;
+        }
+        .med-checkbox-container input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            margin-bottom: 0;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+        .internal-calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            margin-top: 12px;
+            text-align: center;
+        }
+        .calendar-day-box {
+            background: #121017;
+            border: 1px solid #2d283a;
+            border-radius: 8px;
+            padding: 8px 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9d9aa4;
+            transition: all 0.3s ease;
+        }
+        .calendar-day-box.taken {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 8px rgba(229, 184, 66, 0.4);
+        }
+        .calendar-day-name {
+            font-size: 0.7rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bipochain 🌐</h1>
+        <p>Intelligent Cycle & Partner Network</p>
+    </header>
+
+    <nav>
+        <button class="active" onclick="switchTab('diario')">Estado</button>
+        <button onclick="switchTab('ciclo')">Ciclo</button>
+        <button onclick="switchTab('maternidad')">Maternidad</button>
+        <button onclick="switchTab('salud')">Chequeos</button>
+        <button onclick="switchTab('pareja')">Sincro Pareja 👥</button>
+        <button onclick="switchTab('asistente')">Soporte IA🤖</button>
+    </nav>
+
+    <!-- CUADRO DE FRASES DINÁMICAS -->
+    <div style="width: 100%; max-width: 550px;">
+        <div class="quote-box" id="dynamic-quote">"Conocerte es tu mayor herramienta de libertad."</div>
+    </div>
+
+    <!-- PESTAÑA ESTADO DIARIO -->
+    <div id="diario" class="tab-content active">
+        <h2>Tu Estado de Hoy</h2>
+
+        <!-- 🔥 MEJORA DE CONTROL DE MEDICAMENTOS Y ÁCIDO FÓLICO 🔥 -->
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <h3>💊 Control de Toma Diaria (Suplementos y Pastillas)</h3>
+            <p style="font-size: 0.8rem; color: #9d9aa4; margin-bottom: 12px;">Busca tus comprimidos o ingresa uno personalizado. Si lo marcas, queda agendado automáticamente en tu calendario interno.</p>
+            
+            <label for="med-search-input">Buscar o registrar pastilla/suplemento:</label>
+            <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                <input type="text" id="med-search-input" list="pills-database" placeholder="Ej: Ácido Fólico, Aspirina..." style="margin-bottom: 0;">
+                <button class="btn-main" onclick="addNewMedication()" style="width: auto; padding: 0 15px; font-size: 0.9rem;">Agregar</button>
+            </div>
+
+            <!-- BASE DE DATOS AUTOCOMPLETABLE AL PRESIONAR CUALQUIER LETRA (Especialmente con la A) -->
+            <datalist id="pills-database">
+                <option value="Ácido Fólico (Suplemento de Gestación)">
+                <option value="Acetato de Ciproterona">
+                <option value="Acetato de Medroxiprogesterona">
+                <option value="Agnus Castus (Equilibrio Hormonal)">
+                <option value="Amoxicilina (Antibiótico)">
+                <option value="Anastrozol">
+                <option value="Aspirina Preventiva (100mg)">
+                <option value="Anticonceptivas Combinadas Orales">
+            </datalist>
+
+            <!-- Lista Activa de Pastillas para Marcar Hoy -->
+            <div id="active-meds-checklist" style="margin-top: 15px; margin-bottom: 15px;">
+                <!-- Se rellena dinámicamente -->
+            </div>
+
+            <!-- CALENDARIO INTERNO INTEGRADO (Visualiza las tomas registradas) -->
+            <h3 style="font-size: 1rem; margin-top: 15px; color: #fff;">🗓️ Calendario de Monitoreo Interno</h3>
+            <div class="internal-calendar-grid" id="internal-calendar-view">
+                <!-- Se renderiza dinámicamente con los días de la semana actual -->
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>🛡️ Gestión de Métodos y Cuidados</h3>
+            <label for="has-contraceptive">¿Utilizas algún método anticonceptivo o de cuidado?</label>
+            <select id="has-contraceptive" onchange="toggleContraceptivePanel()">
+                <option value="no">No utilizo ninguno actualmente</option>
+                <option value="si">Sí, utilizo un método de cuidado</option>
+            </select>
+
+            <div id="contraceptive-panel" class="hidden-panel">
+                <label for="method-type">Selecciona tu método:</label>
+                <select id="method-type" onchange="showMethodInfo()">
+                    <option value="">-- Elige una opción --</option>
+                    <option value="pastilla">Pastilla Anticonceptiva Diaria</option>
+                    <option value="chip">Chip / Implante Subdérmico</option>
+                    <option value="diu_h">DIU Hormonal (Mirena/Kyleena)</option>
+                    <option value="diu_c">DIU de Cobre (Sin hormonas)</option>
+                    <option value="inyectable">Inyección Mensual/Trimestral</option>
+                </select>
+
+                <div id="method-details" style="margin-top: 10px; font-size: 0.9rem;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📝 Bitácora de Notas y Síntomas</h3>
+            <textarea id="note-input" rows="3" placeholder="Escribe dolores particulares, flujo o anotaciones de hoy... El asistente lo leerá para aprender de ti."></textarea>
+            <button class="btn-main" onclick="saveNote()" style="padding: 10px;">Guardar Nota</button>
+            <div id="notes-list" style="margin-top: 15px; font-size: 0.85rem; max-height: 120px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <!-- PESTAÑA MI CICLO -->
+    <div id="ciclo" class="tab-content">
+        <h2>Control de Período y Adaptación</h2>
+        <label for="cycle-type">Tipo de ciclo:</label>
+        <select id="cycle-type" onchange="calculateCycleData()">
+            <option value="regular">Regular</option>
+            <option value="irregular">Irregular (Se adaptará calculando promedios automáticamente)</option>
+        </select>
+
+        <label for="last-period">Fecha de última menstruación:</label>
+        <input type="date" id="last-period" onchange="calculateCycleData()">
+
+        <label for="cycle-duration">Duración promedio del ciclo (días):</label>
+        <input type="number" id="cycle-duration" value="28" onchange="calculateCycleData()">
+
+        <div id="cycle-results" style="display: none;">
+            <div class="card" style="border-left: 4px solid var(--primary);">
+                <h3>Próximo período estimado:</h3>
+                <p id="next-period-date" style="font-weight: bold; color: var(--primary);"></p>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--green-effective);">
+                <h3>Ventana de Ovulación:</h3>
+                <p id="ovulation-date" style="font-weight: bold; color: var(--green-effective);"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>💡 Sensaciones comunes según tu fase</h3>
+            <p id="phase-symptoms" style="font-size: 0.95rem; line-height: 1.4; color: #b5b1bc;">Ingresa las fechas arriba para conocer tus variaciones corporales.</p>
+        </div>
+    </div>
+
+    <!-- PESTAÑA MATERNIDAD -->
+    <div id="maternidad" class="tab-content">
+        <h2>Maternidad Dirigida</h2>
+        <label for="maternity-goal">Tu objetivo:</label>
+        <select id="maternity-goal" onchange="toggleMaternityView()">
+            <option value="seeking">Buscando concebir 👶</option>
+            <option value="pregnant">¡Estoy Embarazada! 🤰</option>
+        </select>
+
+        <div id="sec-seeking">
+            <div class="card" style="border-left: 4px solid var(--accent);">
+                <h3>Ciencia de la Concepción: ¿Por qué más relaciones?</h3>
+                <p style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 10px; color: #d1ced6;">
+                    Para lograr el embarazo, el tiempo es crucial. El óvulo sobrevive un máximo de 24 horas una vez liberado. Los espermatozoides pueden esperar adentro hasta 5 días de forma saludable. 
+                </p>
+                <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent);">
+                    Tener relaciones sexuales seguidas (idealmente cada 24-48 horas) durante la ventana fértil asegura depósitos constantes de espermatozoides sanos, maximizando la probabilidad de que encuentren al óvulo apenas ocurra la ovulación.
+                </p>
+            </div>
+        </div>
+
+        <div id="sec-pregnant" style="display: none;">
+            <label for="preg-weeks">Semanas de embarazo:</label>
+            <input type="number" id="preg-weeks" value="6" min="4" max="40" onchange="calcPregnancyData()">
+            <div class="card" style="text-align: center;">
+                <h3 id="baby-fruit" style="color: var(--accent); font-size: 1.3rem;"></h3>
+                <p id="baby-desc" style="font-size: 0.9rem; text-align: left; margin-top: 10px; color: #b5b1bc;"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PESTAÑA CHEQUEOS Y ESTUDIOS -->
+    <div id="salud" class="tab-content">
+        <h2>Guía Integral de Estudios Femeninos</h2>
+        <div class="card">
+            <h3>1. Papanicolau y Colposcopía</h3>
+            <input type="date" id="check-pap" onchange="saveCheckDates()">
+            <div id="alert-pap" class="info-tip">Falta cargar fecha.</div>
+        </div>
+        <div class="card">
+            <h3>2. Ecografía Mamaria / Mamografía</h3>
+            <input type="date" id="check-mamo" onchange="saveCheckDates()">
+            <div id="alert-mamo" class="info-tip">Falta cargar fecha.</div>
+        </div>
+        <div class="card">
+            <h3>3. Ecografía Transvaginal</h3>
+            <input type="date" id="check-eco" onchange="saveCheckDates()">
+            <div id="alert-eco" class="info-tip">Falta cargar fecha.</div>
+        </div>
+        <div class="card">
+            <h3>4. Laboratorio General y Perfil Hormonal</h3>
+            <input type="date" id="check-blood" onchange="saveCheckDates()">
+            <div id="alert-blood" class="info-tip">Falta cargar fecha.</div>
+        </div>
+    </div>
+
+    <!-- 👥 PESTAÑA: SINCRONIZACIÓN Y PERMISOS DE PAREJA -->
+    <div id="pareja" class="tab-content">
+        <h2>Ecosistema Conectado: Espacio de tu Pareja</h2>
+        <p style="font-size: 0.9rem; color: #b5b1bc; margin-bottom: 15px;">Gestiona la comunicación inteligente para que tu pareja entienda tus fases, reciba alertas educativas y te acompañe con total empatía.</p>
+
+        <div class="card" style="border-left: 4px solid var(--partner-blue); background: #111625;">
+            <h3>🔗 Código de Vinculación Directa</h3>
+            <p style="font-size: 0.85rem; color:#9d9aa4; margin-bottom: 8px;">Comparte este código seguro en la app instalada en el dispositivo de tu pareja:</p>
+            <div style="background: #18223c; padding: 12px; border-radius: 8px; text-align: center; font-size: 1.2rem; font-weight: bold; color: var(--partner-blue); letter-spacing: 2px; border: 1px solid #24355a;">
+                BIPO-777-SYNC
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Permisos de Integración Nativos</h3>
+            
+            <div class="switch-container">
+                <div>
+                    <strong style="font-size:0.9rem;">Coordinar con Calendario Nativo</strong>
+                    <p style="font-size:0.75rem; color:#888;">Exporta automáticamente alertas discretas a tu calendario móvil.</p>
+                </div>
+                <input type="checkbox" id="perm-calendar" style="width:auto; margin:0;" onchange="requestCalendarMock()">
+            </div>
+
+            <div class="switch-container">
+                <div>
+                    <strong style="font-size:0.9rem;">Notificaciones Push Diarias</strong>
+                    <p style="font-size:0.75rem; color:#888;">Permite que la app te envíe recordatorios de cuidados y píldoras.</p>
+                </div>
+                <input type="checkbox" id="perm-notify" style="width:auto; margin:0;" onchange="requestNotificationMock()">
+            </div>
+        </div>
+
+        <div class="card" style="background: #121017; border-color: #3b354a;">
+            <h3>📡 Vista Previa: Lo que lee tu Pareja hoy</h3>
+            <div id="partner-preview-box" style="font-size: 0.9rem; line-height: 1.4; color: #d1ced6;">
+                Carga los datos de tu última menstruación en la pestaña "Ciclo" para ver qué alertas educativas de empatía y fertilidad recibirá tu pareja en tiempo real.
+            </div>
+        </div>
+    </div>
+
+    <!-- PESTAÑA ASISTENTE IA (CON MEMORIA EVOLUTIVA) -->
+    <div id="asistente" class="tab-content">
+        <h2>Asistente Virtual Empática</h2>
+        <p style="font-size: 0.85rem; margin-bottom: 10px; color: #9d9aa4;">Ella recuerda tus síntomas guardados en tus notas para darte respuestas personalizadas que se adaptan a ti.</p>
+        
+        <div class="chat-box" id="chat-box">
+            <div class="msg ai">¡Hola! Soy tu asistente de Bipochain App. Analicé tu perfil y tus notas históricas. ¿Cómo te sientes físicamente en este momento?</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <input type="text" id="chat-input" placeholder="Pregúntame sobre dolores o dudas íntimas..." style="margin: 0; flex: 1;">
+            <button class="btn-main" onclick="sendMessage()" style="width: auto; padding: 0 20px;">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const frasesFem = [
+            "Tu cuerpo es sabio, cíclico y perfecto. Aprende a sincronizarte con él.",
+            "Priorizar tu salud mental y física no es un lujo, es tu mayor acto de amor propio.",
+            "Poderosa, libre y consciente: dueña absoluta de tus decisiones y tu cuerpo.",
+            "Cada fase de tu ciclo tiene una energía única. Abraza tu vulnerabilidad tanto como tu fuerza.",
+            "Una mujer informada sobre su propia biología es sencillamente imparable.",
+            "No dejes tus controles médicos para después. Tú eres tu proyecto más importante.",
+            "Escucha los mensajes silenciosos de tu cuerpo; el descanso también es salud.",
+            "Tu fertilidad es un signo vital de tu salud general. Cuídala y entiéndela.",
+            "Eres el reflejo de la naturaleza entera: cambias, te renuevas y floreces a tu tiempo.",
+            "Amarte significa cuidar de ti misma en todas tus facetas hormonales.",
+            "La suavidad no quita la fuerza. Eres magnífica en cada etapa de tu mes."
+        ];
+
+        // Listado interno con descripciones de Inteligencia Médica Educativa para Bipochain
+        const medLibraryInfo = {
+            "ácido fólico": "Suplemento vitamínico esencial (Vitamina B9). Crucial para el desarrollo celular y la prevención estricta de malformaciones del tubo neural en el embrión.",
+            "aspirina preventiva": "Utilizado frecuentemente bajo indicación ginecológica para mejorar la perfusión uterina y prevenir preeclampsia o cuadros de resistencia vascular.",
+            "anticonceptivas": "Tratamiento hormonal de supresión ovulatoria. Mantiene niveles regulados de hormonas sintéticas para control de ciclo o anticoncepción.",
+            "agnus castus": "Fitoterapia reguladora. Ayuda de forma natural a mitigar los efectos del Síndrome Premenstrual (SPM) y equilibrar la progesterona.",
+            "ciproterona": "Antiandrógeno potente utilizado para tratar manifestaciones de SOP (Síndrome de Ovario Poliquístico), hirsutismo o acné hormonal."
+        };
+
+        window.onload = function() {
+            loadNotes();
+            loadCheckDates();
+            changePhrase();
+            
+            // Inicializar las nuevas funciones de medicamentos y calendario interno sin romper nada
+            initMedicationSystem();
+
+            if(localStorage.getItem('lastPeriod')) {
+                document.getElementById('last-period').value = localStorage.getItem('lastPeriod');
+                calculateCycleData();
+            }
+        };
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+            
+            changePhrase();
+        }
+
+        function changePhrase() {
+            const randomIndex = Math.floor(Math.random() * frasesFem.length);
+            document.getElementById('dynamic-quote').innerText = `"${frasesFem[randomIndex]}"`;
+        }
+
+        /* ==================== NUEVA LOGICA DE MEDICACIÓN Y CALENDARIO INTERNO ==================== */
+        function initMedicationSystem() {
+            // Cargar por defecto Ácido Fólico si la base de datos local está limpia
+            let currentMeds = JSON.parse(localStorage.getItem('bipochain_tracked_meds')) || ["Ácido Fólico"];
+            localStorage.setItem('bipochain_tracked_meds', JSON.stringify(currentMeds));
+            
+            renderMedsChecklist();
+            renderInternalCalendar();
+        }
+
+        function addNewMedication() {
+            const input = document.getElementById('med-search-input');
+            let medName = input.value.trim();
+            if(!medName) return;
+
+            // Limpiar texto decorativo si seleccionó del autocompletado
+            if(medName.includes("(")) {
+                medName = medName.split("(")[0].trim();
+            }
+
+            let currentMeds = JSON.parse(localStorage.getItem('bipochain_tracked_meds')) || [];
+            if(!currentMeds.includes(medName)) {
+                currentMeds.push(medName);
+                localStorage.setItem('bipochain_tracked_meds', JSON.stringify(currentMeds));
+            }
+            input.value = "";
+            renderMedsChecklist();
+        }
+
+        function renderMedsChecklist() {
+            const currentMeds = JSON.parse(localStorage.getItem('bipochain_tracked_meds')) || [];
+            const container = document.getElementById('active-meds-checklist');
+            const todayStr = new Date().toLocaleDateString('sv-SE'); // Formato YYYY-MM-DD estable
+            
+            let logs = JSON.parse(localStorage.getItem('bipochain_med_logs')) || {};
+
+            if(currentMeds.length === 0) {
+                container.innerHTML = "<p style='color:#777; font-size:0.85rem;'>No tienes medicamentos agregados.</p>";
+                return;
+            }
+
+            container.innerHTML = currentMeds.map((med, index) => {
+                // Buscar si existe info en la biblioteca para instruir a la usuaria
+                let searchKey = med.toLowerCase();
+                let tooltip = "Medicamento registrado de control diario.";
+                for (let key in medLibraryInfo) {
+                    if(searchKey.includes(key)) { tooltip = medLibraryInfo[key]; break; }
+                }
+
+                // Verificar si hoy ya fue tomado
+                let isTakenToday = (logs[todayStr] && logs[todayStr].includes(med)) ? "checked" : "";
+
+                return `
+                    <div class="med-checkbox-container">
+                        <input type="checkbox" id="chk-med-${index}" ${isTakenToday} onchange="toggleMedTake('${med}', this.checked)">
+                        <div style="flex:1;">
+                            <strong style="color:#fff; font-size:0.95rem;">${med}</strong>
+                            <p style="font-size:0.75rem; color:var(--accent); margin-top:2px;">ℹ️ ${tooltip}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleMedTake(medName, isChecked) {
+            const todayStr = new Date().toLocaleDateString('sv-SE');
+            let logs = JSON.parse(localStorage.getItem('bipochain_med_logs')) || {};
+
+            if(!logs[todayStr]) logs[todayStr] = [];
+
+            if(isChecked) {
+                if(!logs[todayStr].includes(medName)) logs[todayStr].push(medName);
+            } else {
+                logs[todayStr] = logs[todayStr].filter(m => m !== medName);
+            }
+
+            localStorage.setItem('bipochain_med_logs', JSON.stringify(logs));
+            renderInternalCalendar(); // Actualizar el calendario integrado al instante
+        }
+
+        function renderInternalCalendar() {
+            const container = document.getElementById('internal-calendar-view');
+            let logs = JSON.parse(localStorage.getItem('bipochain_med_logs')) || {};
+            let trackedMeds = JSON.parse(localStorage.getItem('bipochain_tracked_meds')) || [];
+            
+            let html = "";
+            let hoy = new Date();
+
+            // Generar vista de los últimos 7 días de la semana de forma dinámica
+            for (let i = 6; i >= 0; i--) {
+                let d = new Date();
+                d.setDate(hoy.getDate() - i);
+                
+                let dayName = d.toLocaleDateString('es-ES', { weekday: 'short' });
+                let dayNum = d.getDate();
+                let dateKey = d.toLocaleDateString('sv-SE');
+
+                // Si se tomaron pastillas ese día, se considera agendado y cumplido
+                let dayLogs = logs[dateKey] || [];
+                let isComplete = (trackedMeds.length > 0 && dayLogs.length >= trackedMeds.length) || (dayLogs.length > 0);
+                let cssClass = isComplete ? "calendar-day-box taken" : "calendar-day-box";
+
+                html += `
+                    <div class="${cssClass}">
+                        <div class="calendar-day-name">${dayName}</div>
+                        <div style="font-size:1.1rem; font-weight:700;">${dayNum}</div>
+                        <div style="font-size:0.55rem; margin-top:3px; color:${isComplete ? '#fff' : '#666'}">
+                            ${isComplete ? 'Tomado ✓' : 'Falta'}
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+        /* ==================== FIN LOGICA DE MEDICACIÓN ==================== */
+
+        function requestCalendarMock() {
+            if(document.getElementById('perm-calendar').checked) {
+                alert("🔮 Permiso de Calendario Solicitado: Bipochain creará un calendario exclusivo en segundo plano para sincronizar eventos de forma privada.");
+            }
+        }
+
+        function requestNotificationMock() {
+            if(document.getElementById('perm-notify').checked) {
+                if ('Notification' in window) {
+                    Notification.requestPermission().then(permission => {
+                        if (permission === 'granted') {
+                            alert("🔔 ¡Recordatorios activados con éxito en el sistema!");
+                        }
+                    });
+                } else {
+                    alert("🔔 Permiso de Notificaciones Push activado en la simulación de la app.");
+                }
+            }
+        }
+
+        function toggleContraceptivePanel() {
+            const val = document.getElementById('has-contraceptive').value;
+            document.getElementById('contraceptive-panel').style.display = (val === 'si') ? 'block' : 'none';
+        }
+
+        function showMethodInfo() {
+            const method = document.getElementById('method-type').value;
+            const details = document.getElementById('method-details');
+            let text = "";
+
+            switch(method) {
+                case 'pastilla':
+                    text = "<strong>Efectividad:</strong> 91% (uso real) - 99% (uso perfecto).<br>⏰ <strong>Recordatorio diario:</strong> Requiere toma estricta a la misma hora.";
+                    break;
+                case 'chip':
+                    text = "<strong>Efectividad:</strong> Superior al 99.5%.<br>✨ <strong>Cómo funciona:</strong> Libera hormonas de forma automatizada por 3 años. Máxima comodidad sin olvidos.";
+                    break;
+                case 'diu_h':
+                    text = "<strong>Efectividad:</strong> >99%.<br>🏥 Dispositivo intrauterino hormonal. Disminuye significativamente el dolor y los sangrados excesivos de forma controlada.";
+                    break;
+                case 'diu_c':
+                    text = "<strong>Efectividad:</strong> >99%.<br>🌿 DIU de Cobre. 0% hormonas. Mantiene tu ovulación natural intacta.";
+                    break;
+                case 'inyectable':
+                    text = "<strong>Efectividad:</strong> 94% - 99%.<br>📅 Aplicación rigurosa cada mes calendario.";
+                    break;
+                default: text = "";
+            }
+            details.innerHTML = text ? `<div class="info-tip" style="border-color:var(--primary);">${text}</div>` : "";
+        }
+
+        function saveNote() {
+            const text = document.getElementById('note-input').value.trim();
+            if(!text) return;
+            let notes = JSON.parse(localStorage.getItem('puchaina_notes')) || [];
+            notes.unshift({ date: new Date().toLocaleDateString(), content: text });
+            localStorage.setItem('puchaina_notes', JSON.stringify(notes));
+            document.getElementById('note-input').value = "";
+            loadNotes();
+            analyzeNotesForAI(text);
+        }
+
+        function loadNotes() {
+            let notes = JSON.parse(localStorage.getItem('puchaina_notes')) || [];
+            const container = document.getElementById('notes-list');
+            if(notes.length === 0) {
+                container.innerHTML = "<p style='color:#777;'>No hay notas registradas.</p>";
+                return;
+            }
+            container.innerHTML = notes.map(n => `
+                <div style="background:#121017; padding:8px; border-bottom:1px solid #2d283a; margin-bottom:5px; border-radius:6px;">
+                    <strong>${n.date}:</strong> ${n.content}
+                </div>
+            `).join('');
+        }
+
+        function analyzeNotesForAI(latestText) {
+            let profile = JSON.parse(localStorage.getItem('puchaina_ai_profile')) || { colicos: false, buscaEmbarazo: false };
+            let text = latestText.toLowerCase();
+            if(text.includes("dolor") || text.includes("colico") || text.includes("cólico")) {
+                profile.colicos = true;
+            }
+            if(text.includes("bebe") || text.includes("embarazo") || text.includes("buscar")) {
+                profile.buscaEmbarazo = true;
+            }
+            localStorage.setItem('puchaina_ai_profile', JSON.stringify(profile));
+        }
+
+        function calculateCycleData() {
+            const lastVal = document.getElementById('last-period').value;
+            const duration = parseInt(document.getElementById('cycle-duration').value) || 28;
+            if(!lastVal) return;
+
+            localStorage.setItem('lastPeriod', lastVal);
+            document.getElementById('cycle-results').style.display = "block";
+            let lastDate = new Date(lastVal + 'T00:00:00');
+            
+            let nextPeriod = new Date(lastDate);
+            nextPeriod.setDate(nextPeriod.getDate() + duration);
+            document.getElementById('next-period-date').innerText = nextPeriod.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+
+            let ovulation = new Date(nextPeriod);
+            ovulation.setDate(ovulation.getDate() - 14);
+            document.getElementById('ovulation-date').innerText = ovulation.toLocaleDateString('es-ES', { day: 'numeric', month: 'long' });
+
+            let hoy = new Date();
+            let diasTranscurridos = Math.floor((hoy - lastDate) / (1000 * 60 * 60 * 24)) % duration;
+            
+            let synText = "";
+            let partnerAlert = "";
+
+            if(diasTranscurridos >= 0 && diasTranscurridos <= 5) {
+                synText = "🩸 <strong>Fase Menstrual:</strong> Inflamación pélvica, cólicos por contracción uterina. Tu energía está baja.";
+                partnerAlert = "❤️ <strong>Alerta para él:</strong> Ella está en sus días de sangrado menstrual. Puede sentir dolor físico y fatiga intensa. Sorpréndela reduciendo sus cargas domésticas, prepárale algo caliente y abrázala con total empatía.";
+            } else if(diasTranscurridos > 5 && diasTranscurridos <= 11) {
+                synText = "⚡ <strong>Fase Folicular:</strong> Estrógenos en aumento. Piel radiante y energía física óptima.";
+                partnerAlert = "✨ <strong>Alerta para él:</strong> Su energía y claridad mental están al máximo. Es un momento ideal para planear salidas juntos, conversar proyectos futuros y conectar desde la acción.";
+            } else if(diasTranscurridos > 11 && diasTranscurridos <= 16) {
+                synText = "🔥 <strong>Fase Ovulatoria (Ventana Fértil):</strong> Libido alta, flujo elástico. Óptimo potencial de concepción.";
+                partnerAlert = "🔥 <strong>CONCEPCIÓN CRUCIAL (Para él):</strong> ¡Están en días fértiles! El óvulo vive solo 24 horas pero tus espermatozoides esperan hasta 5 días adentro de ella. <strong>Para lograr el embarazo es fundamental mantener relaciones sexuales seguidas (cada 24 o 48 horas)</strong> para que siempre haya espermatozoides sanos listos para recibir al óvulo. ¡Haz que sea un ambiente romántico y libre de estrés!";
+            } else {
+                synText = "💆‍♀️ <strong>Fase Lútea:</strong> Progesterona alta. Retención de líquidos y fluctuaciones de humor premenstrual (SPM).";
+                partnerAlert = "💆‍♂️ <strong>Alerta para él (Fase Lútea):</strong> Ella está ingresando a la fase premenstrual. Puede sentir hipersensibilidad física o emocional por la caída de hormonas. Sé paciente, no te tomes las cosas de forma personal y bríndale contención amorosa.";
+            }
+            
+            document.getElementById('phase-symptoms').innerHTML = synText;
+            document.getElementById('partner-preview-box').innerHTML = partnerAlert;
+        }
+
+        function toggleMaternityView() {
+            const goal = document.getElementById('maternity-goal').value;
+            document.getElementById('sec-seeking').style.display = (goal === 'seeking') ? 'block' : 'none';
+            document.getElementById('sec-pregnant').style.display = (goal === 'pregnant') ? 'block' : 'none';
+            if(goal === 'pregnant') calcPregnancyData();
+        }
+
+        function calcPregnancyData() {
+            const weeks = parseInt(document.getElementById('preg-weeks').value) || 4;
+            let fruit = ""; let desc = "";
+            
+            if(weeks <= 5) {
+                fruit = "🌱 Tamaño de una Semilla de Sésamo";
+                desc = "El embrión se implanta. Se empieza a formar el tubo neural de forma milagrosa.";
+            } else if(weeks > 5 && weeks <= 9) {
+                fruit = "🍇 Tamaño de una Uva";
+                desc = "Comienzan a definirse sus facciones y pequeños brotes de extremidades.";
+            } else if(weeks > 9 && weeks <= 14) {
+                fruit = "🍋 Tamaño de un Limón";
+                desc = "El feto ya tiene reflejos, traga líquido y sus órganos se especializan.";
+            } else if(weeks > 14 && weeks <= 22) {
+                fruit = "🥑 Tamaño de una Palta";
+                desc = "Escucha los latidos de tu corazón y se mueve libremente en el útero.";
+            } else {
+                fruit = "🍉 Tamaño de una Sandía";
+                desc = "Madurez completa. Se posiciona encajado listo para nacer.";
+            }
+            document.getElementById('baby-fruit').innerText = fruit;
+            document.getElementById('baby-desc').innerText = desc;
+        }
+
+        function saveCheckDates() {
+            const pap = document.getElementById('check-pap').value;
+            const mamo = document.getElementById('check-mamo').value;
+            const eco = document.getElementById('check-eco').value;
+            const blood = document.getElementById('check-blood').value;
+            localStorage.setItem('puchaina_checks', JSON.stringify({pap, mamo, eco, blood}));
+            loadCheckDates();
+        }
+
+        function loadCheckDates() {
+            const data = JSON.parse(localStorage.getItem('puchaina_checks'));
+            if(!data) return;
+            if(data.pap) { document.getElementById('check-pap').value = data.pap; updateReminderText('check-pap', 'alert-pap', 1); }
+            if(data.mamo) { document.getElementById('check-mamo').value = data.mamo; updateReminderText('check-mamo', 'alert-mamo', 1); }
+            if(data.eco) { document.getElementById('check-eco').value = data.eco; updateReminderText('check-eco', 'alert-eco', 1); }
+            if(data.blood) { document.getElementById('check-blood').value = data.blood; updateReminderText('check-blood', 'alert-blood', 1); }
+        }
+
+        function updateReminderText(inputId, alertId, yearsToAdd) {
+            const dateVal = document.getElementById(inputId).value;
+            if(!dateVal) return;
+            let dateObj = new Date(dateVal + 'T00:00:00');
+            dateObj.setFullYear(dateObj.getFullYear() + yearsToAdd);
+            const alertBox = document.getElementById(alertId);
+            alertBox.style.backgroundColor = "#111c15";
+            alertBox.style.borderColor = "#2e7d32";
+            alertBox.innerHTML = `✅ Próximo chequeo sugerido: <strong>${dateObj.toLocaleDateString('es-ES')}</strong>`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const query = input.value.trim();
+            if(!query) return;
+
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div class="msg user">${query}</div>`;
+            input.value = "";
+
+            setTimeout(() => {
+                let profile = JSON.parse(localStorage.getItem('puchaina_ai_profile')) || { colicos: false, buscaEmbarazo: false };
+                let reply = "Te escucho atentamente. Tu cuerpo es único y estoy aprendiendo de tus ritmos diarios.";
+
+                if(profile.colicos && (query.toLowerCase().includes("duele") || query.toLowerCase().includes("mal"))) {
+                    reply = "❤️ Veo en nuestro historial que los cólicos y dolores han estado presentes de forma repetida. Recuerda que un dolor inhabilitante que no cede no debe normalizarse. Te recomiendo registrar la intensidad en tus notas para que tu ginecóloga evalúe un estudio transvaginal detallado.";
+                } else if(profile.buscaEmbarazo && (query.toLowerCase().includes("fertil") || query.toLowerCase().includes("relacion"))) {
+                    reply = "👶 Como estás en proceso de búsqueda, te sugiero activar la sincronización con tu pareja en la solapa 'Sincro Pareja'. Así, la app le explicará directamente a él la importancia biológica de mantener relaciones seguidas cada 24-48 horas durante estos días clave, reduciendo la presión sobre ti.";
+                } else if(query.toLowerCase().includes("hola") || query.toLowerCase().includes("gracias")) {
+                    reply = "¡Hola hermosa! Aquí estoy en la red Bipochain para acompañarte, cuidarte y darte toda la información médica preventiva que necesitas día a día.";
+                }
+                
+                chatBox.innerHTML += `<div class="msg ai">${reply}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
